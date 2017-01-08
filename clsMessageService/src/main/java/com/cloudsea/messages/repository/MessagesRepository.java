@@ -1,6 +1,6 @@
 package com.cloudsea.messages.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.cloudsea.messages.model.Messages;
@@ -11,7 +11,6 @@ import com.cloudsea.messages.model.Messages;
  *
  */
 @RepositoryRestResource(path = "messages", itemResourceRel = "messages")
-public interface MessagesRepository extends JpaRepository<Messages, Long> {
+public interface MessagesRepository extends MongoRepository<Messages, Long> {
 
-	
 }

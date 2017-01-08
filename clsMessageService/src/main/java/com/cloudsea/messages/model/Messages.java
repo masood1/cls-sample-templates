@@ -1,10 +1,7 @@
 package com.cloudsea.messages.model;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * 
@@ -12,14 +9,12 @@ import javax.persistence.Id;
  *
  */
 
-@Entity
+@Document(collection="messages")
 public class Messages {
 
 	@Id
-	@GeneratedValue
-	private Long messageId;
+	private String messageId;
 
-	@Enumerated(EnumType.STRING)
 	private MessageType messageType;
 
 	private String senderIdentifier;
@@ -40,7 +35,7 @@ public class Messages {
 		this.message = message;
 	}
 
-	public Long getMessageId() {
+	public String getMessageId() {
 		return messageId;
 	}
 
