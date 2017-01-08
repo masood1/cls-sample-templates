@@ -11,6 +11,6 @@ import com.cloudsea.messages.model.Messages;
  *
  */
 @RepositoryRestResource(path = "messages", itemResourceRel = "messages")
-public interface MessagesRepository extends MongoRepository<Messages, Long> {
+public interface MessagesRepository extends MongoRepository<Messages, String> {
 
 }
