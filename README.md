@@ -3,3 +3,4 @@
 2. Removed H2 and added mongoDb support
 3. Added centralised configuration using spring cloud config server
 4. Added Service Discover Server and enabled clsMessageService to register it self to Service Discover using Eureka
+5. Added API gateway/Micro Proxy using Netflix ZULL
