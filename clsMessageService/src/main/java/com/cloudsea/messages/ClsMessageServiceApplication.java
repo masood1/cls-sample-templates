@@ -32,6 +32,7 @@ public class ClsMessageServiceApplication {
 	}
 }
 
+
 @Import(SpringDataRestConfiguration.class)
  
 @RestController
