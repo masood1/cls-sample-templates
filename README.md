@@ -4,3 +4,7 @@
 3. Added centralised configuration using spring cloud config server
 4. Added Service Discover Server and enabled clsMessageService to register it self to Service Discover using Eureka
 5. Added API gateway/Micro Proxy using Netflix ZULL
+6. API Gateway enhanced with trnformers 
+7. API Gateway made more powerful by using Gystrix Circuit Breakers 
+8. Added Swagger ClsMessageSerfvice for Rest Documentation:wq
+
