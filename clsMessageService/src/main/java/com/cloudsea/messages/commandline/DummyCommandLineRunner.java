@@ -32,13 +32,13 @@ public class DummyCommandLineRunner implements CommandLineRunner {
 	@Override
 	public void run(String... arg0) throws Exception {
 
-		List<Messages> messages = new ArrayList<>();
-		messages.add(
-				new Messages(MessageType.EMAIL, "shahbaz.khan1003@gmail.com", "jocnudadgmail.com", "Hellow World"));
-		messages.add(new Messages(MessageType.EMAIL, "faiz@gmail.com", "jocnudadgmail.com", "Congratulations "));
-		messages.add(new Messages(MessageType.EMAIL, "zooby@gmail.com", "jocnudadgmail.com", "Sad to hear that"));
-
-		msgRepository.save(messages);
+//		List<Messages> messages = new ArrayList<>();
+//		messages.add(
+//				new Messages(MessageType.EMAIL, "shahbaz.khan1003@gmail.com", "jocnudadgmail.com", "Hellow World"));
+//		messages.add(new Messages(MessageType.EMAIL, "faiz@gmail.com", "jocnudadgmail.com", "Congratulations "));
+//		messages.add(new Messages(MessageType.EMAIL, "zooby@gmail.com", "jocnudadgmail.com", "Sad to hear that"));
+//
+//		msgRepository.save(messages);
 
 	}
 

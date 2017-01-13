@@ -7,4 +7,5 @@
 6. API Gateway enhanced with trnformers 
 7. API Gateway made more powerful by using Gystrix Circuit Breakers 
 8. Added Swagger ClsMessageSerfvice for Rest Documentation:wq
-
+9. Added Zipkin fir tracing
+10. Attempted rabbitMQ but did not worked the code has been commented

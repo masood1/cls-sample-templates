@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -20,6 +21,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  *
  */
 
+@Import(SpringDataRestConfiguration.class)
+
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan("com.cloudsea.*")
@@ -32,9 +35,28 @@ public class ClsMessageServiceApplication {
 	}
 }
 
+//interface MessageServiceChannels {
+//	@Input
+//	SubscribableChannel messageInput();
+//}
 
-@Import(SpringDataRestConfiguration.class)
- 
+//@MessageEndpoint
+//class MessageChannelProcesor {
+//
+//	@ServiceActivator(inputChannel = "input")
+//	public void oneNewReservations(Message<String> msg) {
+//
+//		this.messagesRepository
+//				.save(new com.cloudsea.messages.model.Messages(MessageType.SMS, "rabbitmq", "local", "fromque"));
+//	}
+//
+//	private final MessagesRepository messagesRepository;
+//
+//	public MessageChannelProcesor(MessagesRepository messagesRepository) {
+//		this.messagesRepository = messagesRepository;
+//	}
+//}
+
 @RestController
 @RefreshScope
 class TestControler {

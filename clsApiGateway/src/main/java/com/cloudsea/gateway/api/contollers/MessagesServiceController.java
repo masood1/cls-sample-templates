@@ -17,10 +17,10 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 interface MessageReader {
 
 	@RequestMapping(method = RequestMethod.GET, value = "messages")
-	Resources<Message> read();
+	Resources<ClsMessage> read();
 }
 
-class Message {
+class ClsMessage {
 
 	private String message;
 
@@ -41,14 +41,21 @@ public class MessagesServiceController {
 		this.messgeReader = messageReader;
 	}
 
-	public Collection<String> fallBackForMessages() {
-		return new ArrayList<>();
-	}
+//	@RequestMapping(method = RequestMethod.POST)
+//	public void write(@RequestBody ClsMessage clsMessage) {
+//
+//		Message<String> msg = MessageBuilder.withPayload(clsMessage.getMessage()).build();
+//		messageOutput.send(msg);
+//	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "/data")
 	@HystrixCommand(fallbackMethod = "fallBackForMessages")
-	public Collection<String> fallbackForMessages() {
+	public Collection<String> read() {
 
-		return this.messgeReader.read().getContent().stream().map(Message::getMessage).collect(Collectors.toList());
+		return this.messgeReader.read().getContent().stream().map(ClsMessage::getMessage).collect(Collectors.toList());
+	}
+
+	public Collection<String> fallBackForMessages() {
+		return new ArrayList<>();
 	}
 }
